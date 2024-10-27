@@ -74,3 +74,10 @@ Run the SQL script in a MySQL or compatible database environment to create the t
 ---
 
 This should provide a comprehensive summary for anyone browsing your GitHub repository!
+
+
+![Screenshot 2024-10-27 085505](https://github.com/user-attachments/assets/b570d2bf-db3a-4e51-b06d-5cf18084965d)
+![Screenshot 2024-10-27 085533](https://github.com/user-attachments/assets/a9ef3368-3146-4dd7-845e-fd632da4f746)
+![Screenshot 2024-10-27 085551](https://github.com/user-attachments/assets/1bab15b3-1b62-485c-ab37-9cf6169b1123)
+![Screenshot 2024-10-27 085643](https://github.com/user-attachments/assets/647185e9-66b6-4c03-a863-492ab79284ca)
+![Screenshot 2024-10-27 085745](https://github.com/user-attachments/assets/4e2f4250-da41-494f-bb50-13e36dad0736)
