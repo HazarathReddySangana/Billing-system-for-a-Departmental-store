@@ -1,0 +1,83 @@
+create database ecommerce_db;
+
+use ecommerce_db;
+-- Stores Table
+CREATE TABLE store (
+    store_id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100),
+    location VARCHAR(255)
+);
+
+-- Products Table
+CREATE TABLE product (
+    product_id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100),
+    price DECIMAL(10, 2),
+    stock INT
+);
+
+-- Customers Table
+CREATE TABLE bill_customer (
+    customer_id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100),
+    contact_info VARCHAR(255)
+);
+
+-- Orders Table
+CREATE TABLE bill_orders (
+    order_id INT PRIMARY KEY AUTO_INCREMENT,
+    customer_id INT,
+    store_id INT,
+    order_date DATE,
+    total_amount DECIMAL(10, 2),
+    FOREIGN KEY (customer_id) REFERENCES bill_customer(customer_id),
+    FOREIGN KEY (store_id) REFERENCES store(store_id)
+);
+
+-- Order Details Table (to track products within an order)
+CREATE TABLE order_details (
+    order_id INT,
+    product_id INT,
+    quantity INT,
+    subtotal DECIMAL(10, 2),
+    PRIMARY KEY (order_id, product_id),
+    FOREIGN KEY (order_id) REFERENCES bill_orders(order_id),
+    FOREIGN KEY (product_id) REFERENCES product(product_id)
+);
+
+
+insert into store( name, location)
+values('balaji', 'nellore'),
+('sri lakshmi', 'ongole'),
+('KGK STORE', 'tricy');
+
+insert into product( name, price, stock)
+values('rice bags', 1532.98, 80),
+('spices packets' , 180.00, 250),
+('wheat flour', 72.55, 100);
+
+insert into bill_customer( name, contact_info)
+values('hazarath', '7845124512'),
+('bhargav', '9865323265'),
+('gowri', '7675747172');
+
+insert into bill_orders( order_date , total_amount)
+values('2024-10-1', 5822.4),
+('2024-9-23', 854.00),
+('2024-10-15', 9090.78);
+
+insert into order_details(order_id, product_id , quantity , subtotal)
+values(1, 1, 18, 5000.00),
+(2,2, 20,2000),
+(3, 3,25, 1000);
+
+
+select * from store;
+
+select * from product;
+
+select * from bill_customer;
+
+select * from bill_orders;
+
+select * from order_details;
